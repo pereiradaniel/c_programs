@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 void swap(int *x, int *y)
 {
+    bool swapped = false;
     // compares and swaps if necessary
     while (*x > *y)
     {
@@ -15,9 +17,17 @@ void swap(int *x, int *y)
 
 void bubble_sort(int a[], int length)
 {
-   for (int i = 0; i < length; ++i)
-        for (int j = 0; j < length - 1; ++j)
+    bool swapped = false;
+    int i = 0;
+    do {
+        swapped = false;
+        for (int j = 0; j < length - 1 - i; ++j)
+        {
             swap(&a[j], &a[j+1]);
+            swapped = true;
+        }
+        ++i;
+    } while (swapped);
 }
 
 void display(int x[], int length)

@@ -1,6 +1,5 @@
 #include <stdio.h>
-
-#define LENGTH(a) sizeof(a) / sizeof(a[0]) - 1 // function-like macro
+#include "length.h" // defines length of an array
 
 void print_reverse(int array[], int length)
 {

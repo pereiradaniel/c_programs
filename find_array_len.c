@@ -1,7 +1,8 @@
 // Use the size of operator to get the array length.
 #include <stdio.h>
 #include <stdlib.h>
-#define LENGTH(a) sizeof(a) / sizeof(a[0]) // function-like macro
+#include "length.h" // defines length of an array
+
 #define SIZE 9 // use a pre-processor directive to store the size of the array
 
 void print_size(int array[])

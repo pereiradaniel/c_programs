@@ -1,0 +1,1 @@
+#define LENGTH(a) sizeof(a) / sizeof(a[0]) - 1 // function-like macro

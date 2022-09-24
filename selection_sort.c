@@ -2,15 +2,15 @@
 // classic sorting algorithm
 
 #include <stdio.h>
-// #include "length.h"
+#include "length.h"
 
 int main(int argc, char* argv[]) {
 
     // Array is unsorted to begin with
     int a[] = {5,9,7,6,4,0,2,3,8,1};
-    int length = sizeof(a) / sizeof(int);
+    int length = LENGTH(a);
 
-    for (int i = 0; i < length; ++i)
+    for (int i = 0; i < length - 1; ++i) // -1 do not check last element
     {
         // Find index of current smallest element
         int min = i; // assume we have min number at beginning

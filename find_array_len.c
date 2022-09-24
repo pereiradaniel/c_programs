@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     printf("sizeof(int): %d\n", sizeof(int));
 
     // loop through the array, printing the elements to the screen:
-    for (int i = 0; i < LENGTH(array); ++i)
+    for (int i = 0; i < LENGTH(array) - 1; ++i)
     {
         printf("array[%d] = %d\n", i, array[i]);
     }

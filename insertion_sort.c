@@ -1,12 +1,14 @@
 // Implement an insertion sort
 #include <stdio.h>
+#include "length.h"
+
 void insertion_sort(int a[], int length);
 
 int main(int argc, char* argv[])
 {
     int a[] = {8,4,9,5,7,6,3,2};
-    insertion_sort(a,8);
-    for (int i = 0; i<8; ++i)
+    insertion_sort(a,LENGTH(a));
+    for (int i = 0; i<LENGTH(a); ++i)
     {
         printf("a[%d] = %d\n", i, a[i]);
     }

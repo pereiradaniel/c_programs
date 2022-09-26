@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h> // use malloc and free
 #include <string.h> // memcopy
-
+#include "length.h"
 // Function returtns pointer to an int:
 //   - Because space will by dynamically alloc to the heap
 //     for the new array!
@@ -22,7 +22,7 @@ int main (int argc, char* argv[])
     int array2[] = {5,6,7,8,9};
 
     // Store the pointer returned by concat.
-    int* array3 = concat(array1, 5, array2, 5);
+    int* array3 = concat(array1, LENGTH(array1), array2, LENGTH(array2));
 
     for (int i = 0; i < 10; ++i)
     {

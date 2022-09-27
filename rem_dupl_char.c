@@ -40,3 +40,22 @@ int main(int argc, char* argv[])
 
     return 0; // Exit
 }
+
+// VALGRIND RESULTS:
+
+// ==194== Memcheck, a memory error detector
+// ==194== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+// ==194== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+// ==194== Command: ./a.out
+// ==194==
+// DDDDIIIIOOOODDDDDDD
+// DIO
+// ==194== 
+// ==194== HEAP SUMMARY:
+// ==194==     in use at exit: 0 bytes in 0 blocks
+// ==194==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+// ==194==
+// ==194== All heap blocks were freed -- no leaks are possible
+// ==194==
+// ==194== For lists of detected and suppressed errors, rerun with: -s
+// ==194== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

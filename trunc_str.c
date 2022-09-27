@@ -1,3 +1,8 @@
+// Truncate a statically allocated string.
+//
+// NOTE: There is unused memory after the string has been truncated!
+//       See trunc_dyn_str.c
+
 #include <stdio.h>
 
 // when an array is passed to a function, it is passed a pointer!

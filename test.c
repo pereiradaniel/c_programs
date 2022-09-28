@@ -1,38 +1,8 @@
 #include <stdio.h>
-void cDown(int input);
-void cUp(int input);
-
-int main()
+int main(int argc, char* argv[])
 {
-    // Counts down from a user-input number.
-    int num=0;
-    // short int big_int = 2147483649;
-    
-    do {
-        printf("Enter a positive whole number: ");
-        scanf("%d", &num);
-    } while (num > 2147483647 || num <= (-2147483647));
-
-    if (num >0)
-    {
-        cDown(num);
-    }
-    else if (num <0)
-    {
-        cUp(num);
-    }
-    
-    return 0;
+	int a[] = {1,2,3,4,5,6,7,8,9};
+	for (int i=0; i < sizeof(a) / sizeof(a[0]); ++i)
+		printf("a[%d] = %d\n", i, a[i]);
+	return 0;
 }
-
-void cDown(int input){
-    for (int i=input; i>=0; --i)
-        printf("%d\n",i);
-        return;
-};
-
-void cUp(int input){
-    for (int i=input; i<=0; ++i)
-        printf("%d\n",i);
-        return;
-};

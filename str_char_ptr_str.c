@@ -10,6 +10,8 @@ int main()
     printf("s1: %s\n", s1); // What is passed to printf is a ptr to first elem of array
     
     char *s2 = "abc"; // *s2 is a pointer to a character! the first letter
+    // Make this a const so that you don't accidentally modify while executing!
+    // const char *s2 = "abc"; // *s2 is a pointer to a character! the first letter
 
     // String can be printed with printf, passed a ptr to first char.
     printf("s2: %s\n", s2);
@@ -33,9 +35,9 @@ int main()
     // like strcpy() from the string library.
     s2 = "New string"; // Another string literal in memory, s2 now points to.
     printf("s2: %s\n", s2);
-    
+
     printf("sizeof(s1): %d\n", sizeof(s1));
-    printf("sizeof(s2): %d\n", sizeof(s2));
+    printf("sizeof(s2): %d\n", sizeof(s2)); // size of ptr on the stack
 
     return 0;
 }

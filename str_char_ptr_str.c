@@ -22,6 +22,20 @@ int main()
     // s1 is a char array stored on stack
     // s2 is a ptr to a string literal, stored where we are not sure,
     // and we are not allowed to modify it.
+    
+    // s2 can use ptr arithmetic
+    s2++; // s2 will point to index 1 now
+    printf("s2: %s\n", s2); // bc
+    // Whole string still exists in memory, but s2 now points to s[1]!
+    // s1 will act more like a constant ptr
+    // Because it is a character array, you can not just
+    // assign a new string to it. Unless you use a function
+    // like strcpy() from the string library.
+    s2 = "New string"; // Another string literal in memory, s2 now points to.
+    printf("s2: %s\n", s2);
+    
+    printf("sizeof(s1): %d\n", sizeof(s1));
+    printf("sizeof(s2): %d\n", sizeof(s2));
 
     return 0;
 }

@@ -1,5 +1,6 @@
 // Implement merge sort algorithm.
 #include <stdio.h>
+#include "length.h"
 
 void merge_sort(int a[], int length);
 void merge_sort_recursion(int a[], int l, int r);
@@ -7,9 +8,8 @@ void merge_sorted_arrays(int a[], int l, int m, int r);
 
 int main(int argc, char* argv[])
 {
-
     int array[] = {9,4,8,1,7,0,3,2,5,6}; // test array
-    int length = 10;
+    int length = LENGTH(array);
 
     // Sort array using merge_sort:
     merge_sort(array, length);
@@ -46,7 +46,6 @@ void merge_sort_recursion(int a[], int l, int r)
 
         merge_sorted_arrays(a,l,m,r);
     }
-
 }
 
 // Merge the two sorted portions of the array a between indexes
@@ -90,6 +89,21 @@ void merge_sorted_arrays(int a[], int l, int m, int r)
             a[k] = temp_right[j];
             ++j;
         }
-
     }
 }
+
+// ==160== Memcheck, a memory error detector
+// ==160== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+// ==160== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+// ==160== Command: ./a.out
+// ==160==
+// 0123456789
+// ==160== 
+// ==160== HEAP SUMMARY:
+// ==160==     in use at exit: 0 bytes in 0 blocks
+// ==160==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+// ==160==
+// ==160== All heap blocks were freed -- no leaks are possible
+// ==160==
+// ==160== For lists of detected and suppressed errors, rerun with: -s
+// ==160== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

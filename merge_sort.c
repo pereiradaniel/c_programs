@@ -11,9 +11,8 @@ int main(int argc, char* argv[])
     int array[] = {9,4,8,1,7,0,3,2,5,6}; // test array
     int length = 10;
 
-    // Call merge_sort with the array and its length
+    // Sort array using merge_sort:
     merge_sort(array, length);
-    // Array should be sorted.
     
     // Print array:
     for(int i=0; i < length; ++i)
@@ -23,10 +22,12 @@ int main(int argc, char* argv[])
     return 0;
 }
 
+// Perform a merge sort of the array using the given length.
 void merge_sort(int a[], int length)
 {
     // Call the merge_sort_recursion function to sort array:
     // - Initially we will want to use the whole array.
+    // - Use left index of 0 and right index of -1.
     merge_sort_recursion(a, 0, length - 1);
 }
 
@@ -48,15 +49,16 @@ void merge_sort_recursion(int a[], int l, int r)
 
 }
 
+// Merge the two sorted portions of the array a between indexes
+// l>>m and m+1>>r
 void merge_sorted_arrays(int a[], int l, int m, int r)
 {
-    // Program needs the length of each portion of array:
+    // Calculate lengths of left and right portions of a[]:
     int left_length = m - l + 1;
     int right_length = r - m;
 
     // Create two temporary sub-arrays:
     // - Copy portions of a for left and right portions into sub-arrays.
-
     int temp_left[left_length];
     int temp_right[right_length];
 
@@ -78,7 +80,7 @@ void merge_sorted_arrays(int a[], int l, int m, int r)
         // Find element from left or right portion to add into array.
 
         // Check that we have not reached end of array, check values
-        if((i<left_length) && (j>=right_length) || temp_left[i] <= temp_right[j])
+        if((i<left_length) && (j>=right_length|| temp_left[i] <= temp_right[j]))
         {
             a[k] = temp_left[i];
             ++i;

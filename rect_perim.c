@@ -1,3 +1,4 @@
+// Calculate the perimeter of a rectangle using user input.
 #include <stdio.h>
 int main(int arg, char* argv[])
 {

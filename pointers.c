@@ -18,6 +18,6 @@ int main(int arg, char* argv[])
     printf(" b: %d\n", b);  // value stored by b: 50
     printf("&b: %p\n", &b); // mem address for b
     printf(" p: %p\n", a);  // mem address for b
-
+ 
     return 0;
 }

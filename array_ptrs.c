@@ -36,7 +36,7 @@ int main()
     // array_ptrs.c:36:20: warning: initialization of ‘int *’ from incompatible pointer type ‘int (*)[5]’ [-Wincompatible-pointer-types]
     //    36 |     int *pointer = &matrix[1] + 1;
     // int *pointer = &matrix[1] + 1;
-    int *pointer = (int*)(&matrix[1] + 1);
+    int *pointer = (int*)(&matrix[1] + 1); // Use parentheses so that typecast is applied correctly
     
     printf("pointer: %zu\n", pointer);
     printf("*pointer: %zu\n", *pointer);

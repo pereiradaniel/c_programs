@@ -1,5 +1,5 @@
-// Dynamic Memory Allocation
-// -------------------------
+// Dynamic Memory Allocation - malloc
+// ----------------------------------
 // This program accepts user input to create a dynamic array of ints.
 
 #include <stdio.h>

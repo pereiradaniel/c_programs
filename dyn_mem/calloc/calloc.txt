@@ -1,0 +1,47 @@
+==215== Memcheck, a memory error detector
+==215== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==215== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==215== Command: ./calloc
+==215==
+This program will dynamically allocate memory for an array of ints.
+How many ints would you like? 5
+Using calloc zeroes all the data first:
+a[0] = 0
+a[1] = 0
+a[2] = 0
+a[3] = 0
+a[4] = 0
+
+After the ints have been assigned:
+a[0] = 0
+a[1] = 1
+a[2] = 2
+a[3] = 3
+a[4] = 4
+
+a: 0x4a4e8c0
+save: 0x4a4e8c0
+==215== Invalid read of size 4
+==215==    at 0x1093AE: main (in /mnt/c/Users/perei/source/repos/c_programs/dyn_mem/calloc/calloc)
+==215==  Address 0x4a4e8c0 is 0 bytes inside a block of size 20 free'd
+==215==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==215==    by 0x109378: main (in /mnt/c/Users/perei/source/repos/c_programs/dyn_mem/calloc/calloc)
+==215==  Block was alloc'd at
+==215==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==215==    by 0x10926C: main (in /mnt/c/Users/perei/source/repos/c_programs/dyn_mem/calloc/calloc)
+==215==
+save[0] = 0
+save[1] = 1
+save[2] = 2
+save[3] = 3
+save[4] = 4
+
+==215== 
+==215== HEAP SUMMARY:
+==215==     in use at exit: 0 bytes in 0 blocks
+==215==   total heap usage: 3 allocs, 3 frees, 2,068 bytes allocated
+==215==
+==215== All heap blocks were freed -- no leaks are possible
+==215==
+==215== For lists of detected and suppressed errors, rerun with: -s
+==215== ERROR SUMMARY: 5 errors from 1 contexts (suppressed: 0 from 0)

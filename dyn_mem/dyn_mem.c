@@ -23,5 +23,7 @@ int main(int argc, char* argv[])
 
     printf("a: %p\n", a); // Prints memory location of a.
 
+    free(a); // Deallocate memory!
+
     return 0;
 }

@@ -1,9 +1,5 @@
 // Dynamic Memory Allocation
 // -------------------------
-// malloc - Used to request a block of data on the heap.
-// malloc(num_of_bytes to allocate), returns a pointer.
-// Can be used with sizeof().
-
 // This program accepts user input to create a dynamic array of ints.
 
 #include <stdio.h>

@@ -1,3 +1,5 @@
+// Summing an int array.
+
 #include <stdio.h>
 #include "../length.h"
 

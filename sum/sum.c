@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "../length.h"
 
-int main(int argc, char* argv)
+int main(int argc, char* argv[])
 {
     int sum = 0;
     int nums[] = {1,1,1};

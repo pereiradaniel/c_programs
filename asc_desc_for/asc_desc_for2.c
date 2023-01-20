@@ -1,5 +1,5 @@
 // A for loop that can go forward or backward.
-// Improved undreadable for loop.
+// Improved unreadable for loop.
 
 #include <stdio.h>
 #include <ctype.h>

@@ -8,9 +8,12 @@
 
 int main(int argc, char* argv[])
 {
-    int choice = 0; // Menu selection.
-    double a = 0;   // First number.
-    double b = 0;   // Second number.
+    const int m_lo = 1; // low menu selection number
+    const int m_hi = 6; // high menu selection number
+    
+    int choice = 0;     // Menu selection.
+    double a = 0;       // First number.
+    double b = 0;       // Second number.
     char main_loop = 'Y';   // Loop program until != Y
 
     while (toupper(main_loop) == 'Y')
@@ -22,27 +25,38 @@ int main(int argc, char* argv[])
         printf("\n\t3 - Multiplication");
         printf("\n\t4 - Division (quotient and remainder)");
         printf("\n\t5 - Square root");
+        printf("\n\t6 - Exponent");
         printf("\n");
 
-        while (choice < 1 || choice > 5)
+        // Loop until menu selection is within bounds:
+        while (choice < m_lo || choice > m_hi)
         {
             if (scanf(" %d", &choice) != 1)
                 printf("\nFailed to read integer!\n");
-            if (choice < 1 || choice > 5)
+            if (choice < m_lo || choice > m_hi)
                 printf("\nMenu options are 1-5!\n");
         }
 
-        printf("\nEnter first number: ");
+        // Select appropriate message for first number entry:
+        if (choice == 6)    // Calculating exponent.
+            printf("\nEnter base: ");
+        else                // Basic two operand operations.
+            printf("\nEnter first number: ");
+
         if (scanf(" %lf", &a) != 1)
             printf("\nFailed to read double!");
         
-        if (choice != 5)
+        // Select appropriate message for second number entry:
+        if (choice != 5)    // Exlude single operand operations!
         {
-            printf("\nEnter second number: ");
+            if (choice == 6)    // Calculating exponent.
+                printf("\nEnter exponent: ");
+            else                // Basic two operand operations.
+                printf("\nEnter second number: ");
+
             if (scanf(" %lf", &b) != 1)
                 printf("\nFailed to read double!");
         }
-
 
         // Run user's selection:
         switch(choice) {
@@ -56,24 +70,25 @@ int main(int argc, char* argv[])
                     break;
             case 5: printf("\nSqaure root of %.2lf = %lf", a, sqrt((int)a));
                     break;
+            case 6: printf("\n%.lf**%.lf = %.lf", a, b, pow(a, b));
+                    break;
             default:
                     break;
         }
 
+        // Ask user to repeat program:
         printf("\nRepeat? (Y/N) ");
         if (scanf(" %c", &main_loop) != 1)
             printf("\nFailed to read char!");
         
+        // Reset vars for repeat.
         if (toupper(main_loop) == 'Y')
         {
-            // Reset vars for repeat.
             choice = 0;
             a = 0;
             b = 0;
         }
-
     }
-
     printf("\n");
     return 0;
 }

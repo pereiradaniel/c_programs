@@ -1,5 +1,5 @@
-// calc3.c
-//  - Add exponent calculation function.
+// calc4.c
+//  - Catch divide by zero error.
 // Calculator program
 
 #include <stdio.h>

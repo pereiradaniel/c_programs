@@ -1,4 +1,5 @@
-// calc.c
+// calc2.c
+//  - Add main loop repeat.
 // Calculator program
 
 #include <stdio.h>

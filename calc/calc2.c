@@ -63,6 +63,15 @@ int main(int argc, char* argv[])
         printf("\nRepeat? (Y/N) ");
         if (scanf(" %c", &main_loop) != 1)
             printf("\nFailed to read char!");
+        
+        if (toupper(main_loop) == 'Y')
+        {
+            // Reset vars for repeat.
+            choice = 0;
+            a = 0;
+            b = 0;
+        }
+
     }
 
     printf("\n");

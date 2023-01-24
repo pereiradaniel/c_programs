@@ -3,8 +3,6 @@
 #include <stdio.h>
 #include <math.h>
 
-void add();
-void subtract();
 int main(int argc, char* argv[])
 {
     int choice = 0; // Menu selection.

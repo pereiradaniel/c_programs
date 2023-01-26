@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
             if (scanf(" %d", &choice) != 1)
                 printf("\nFailed to read integer!\n");
             if (choice < m_lo || choice > m_hi)
-                printf("\nMenu options are 1-5!\n");
+                printf("\nMenu options are %d-%d!\n", m_lo, m_hi);
         }
 
         // Select appropriate message for first number entry:

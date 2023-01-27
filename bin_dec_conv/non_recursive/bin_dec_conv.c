@@ -1,6 +1,9 @@
 // Non-recursive decimal to binary converter
+
 #include <stdio.h>
-void decToBin(int n);
+
+void decToBin(int n); // Function that prints binary conversion.
+
 int main(int argc, char* argv[])
 {
     int users_number = 0;

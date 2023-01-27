@@ -64,11 +64,9 @@ void binToDec(int n)
 {
     int result = 0;
 
-    for (int i=0; n > 0; ++i)
-    {
+    for (int i=0; n > 0; ++i, n /= 10)
         result += (n%10) * pow(2,i);
-        n /= 10;
-    }
+
     printf("%d\n", result);
 }
 void decToBin(int n)
@@ -76,11 +74,8 @@ void decToBin(int n)
     // Declare and fill array (will be backwards):
     int binary[32] = {0};
     int i=0;
-    for (; n > 0; ++i)
-    {
+    for (; n > 0; ++i, n /= 2)
         binary[i] = n % 2;
-        n /= 2;
-    }
 
     // Print array in reverse order:
     for (int j=i-1; j >= 0; --j)
@@ -88,5 +83,3 @@ void decToBin(int n)
     
     printf("\n");
 }
-
-

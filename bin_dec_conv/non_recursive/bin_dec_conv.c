@@ -20,9 +20,10 @@ int main(int argc, char* argv[])
 
 void decToBin(int n)
 {
+    int binary[32] = {0};   // 32 bit default
+    int i=0;                // Re-use this counter when printing
+    
     // Declare and fill array (will be backwards):
-    int binary[32] = {0};
-    int i=0; // Re-use this counter when printing
     for (; n > 0; ++i, n /= 2)
         binary[i] = n % 2;
 

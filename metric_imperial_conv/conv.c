@@ -2,11 +2,11 @@
 
 double cmToInch(const double n);
 
-int main(int argc, char* argv)
+int main(int argc, char* argv[])
 {
     double user_input = 0;
 
-    printf("\nEnter length in cm:");
+    printf("\nEnter length in cm: ");
     if (scanf(" %lf", &user_input) != 1)
         printf("\nFailed to read input!\n");
 

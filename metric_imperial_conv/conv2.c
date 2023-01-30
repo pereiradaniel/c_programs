@@ -1,35 +1,65 @@
 #include <stdio.h>
-#include <math.h>
 
-double cmToInch(const double n);
-double inchToCm(const double n);
+double cmToInch(const double *n);
+double inchToCm(const double *n);
 
 int main(int argc, char* argv[])
 {
     double user_input = 0;
+    int choice = 0;
 
-    printf("\nEnter length in cm: ");
-    if (scanf(" %lf", &user_input) != 1)
-        printf("\nFailed to read input!\n");
+    while (choice < 1 || choice > 2)
+    {
+        printf("\nMetric to Imperial Conversion");
+        printf("\n=============================");
+        printf("\n\t1\tConvert cm to inches:");
+        printf("\n\t2\tConvert inches to cm:");
+        printf("\n\n");
+        
+        if (scanf(" %d", &choice) != 1)
+        {
+            printf("\nFailed to read input!\n");
+            goto end; // EXIT!
+        }
+        
+        if (choice < 1 || choice > 2)
+            printf("\nChoose an option between 1 and 2!\n");
+    }
 
-    printf("\n%.2lf cm\t=\t%.2lf inches", user_input, cmToInch(user_input));
+    if (choice == 1) // Convert cm to inches
+    {
+        printf("\nEnter length in cm: ");
+        if (scanf(" %lf", &user_input) != 1)
+            printf("\nFailed to read input!\n");
 
-    printf("\nEnter length in inches: ");
-    if (scanf(" %lf", &user_input) != 1)
-        printf("\nFailed to read input!\n");
+        printf("\n%.2lf cm\t=\t%.2lf inches", user_input, cmToInch(&user_input));
+    }
 
-    printf("\n%.2lf inches\t=\t%.2lf cm", user_input, inchToCm(user_input));
+    if (choice == 2) // Convert inches to cm
+    {
+        printf("\nEnter length in inches: ");
+        if (scanf(" %lf", &user_input) != 1)
+            printf("\nFailed to read input!\n");
 
+        printf("\n%.2lf inches\t=\t%.2lf cm", user_input, inchToCm(&user_input));
+    }
+
+    if (choice < 1 || choice > 2)
+    {
+        printf("\nError!");
+    }
+    
+    end:
     printf("\n");
     return 0;
 }
 
-double cmToInch(const double n)
+double cmToInch(const double *n)
 {
-    return n*0.393700787;
+    return (*n)*0.393700787;
 }
 
-double inchToCm(const double n)
+double inchToCm(const double *n)
 {
-    return (n*2.54)*100.0/100.0; // Round to the nearest hundredth!
+    return (*n)*2.54;
 }

@@ -1,13 +1,14 @@
 #include <stdio.h>
 
-double cmToInch(const double *n);
-double inchToCm(const double *n);
+double cmToInch(const double *n); // Converts cm to inches
+double inchToCm(const double *n); // Converts inches to cm
 
 int main(int argc, char* argv[])
 {
-    double user_input = 0;
-    int choice = 0;
+    double user_input = 0;  // User's number to convert
+    int choice = 0;         // User's menu selection
 
+    // Main menu:
     while (choice < 1 || choice > 2)
     {
         printf("\nMetric to Imperial Conversion");
@@ -26,13 +27,14 @@ int main(int argc, char* argv[])
             printf("\nChoose an option between 1 and 2!\n");
     }
 
+    // Select conversion method chosen by user:
     if (choice == 1) // Convert cm to inches
     {
         printf("\nEnter length in cm: ");
         if (scanf(" %lf", &user_input) != 1)
             printf("\nFailed to read input!\n");
 
-        printf("\n%.2lf cm\t=\t%.2lf inches", user_input, cmToInch(&user_input));
+        printf("\n%.2lf cm    \t=\t%.2lf inches", user_input, cmToInch(&user_input));
     }
 
     if (choice == 2) // Convert inches to cm

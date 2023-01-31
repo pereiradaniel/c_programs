@@ -10,5 +10,6 @@ int main(int argc, char* argv[])
 
     printf("\n%.2lf cm = %.2lf inches", user_input, user_input*0.393700787);
 
+    printf("\n");
     return 0;
 }

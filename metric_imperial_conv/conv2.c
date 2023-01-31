@@ -50,11 +50,6 @@ int main(int argc, char* argv[])
             printf("\n%.2lf inches\t=\t%.2lf cm", user_input, inchToCm(&user_input));
         }
 
-        if (choice < 1 || choice > 2)
-        {
-            printf("\nError!");
-        }
-
         // Ask user to repeat
         printf("\nRepeat program? 1 yes 2 no: ");
         if (scanf(" %d", &main_loop) != 1)
@@ -62,7 +57,7 @@ int main(int argc, char* argv[])
         
         // Reset vars before repeating program:
         if (main_loop == 1)
-         choice = 0, user_input = 0;
+            choice = 0, user_input = 0;
     }
 
     end:

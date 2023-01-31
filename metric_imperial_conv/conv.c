@@ -12,6 +12,7 @@ int main(int argc, char* argv[])
 
     printf("\n%.2lf cm = %.2lf inches", user_input, cmToInch(&user_input));
 
+    printf("\n");
     return 0;
 }
 
